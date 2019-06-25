@@ -37,31 +37,21 @@ const App = () => {
 
 ### `useWindowEvent`
 
-Use to hook into a `window` event as an effect. For example, the following code tracks changes to the window size.
+Use to hook into a `window` event as an effect. For example, the following code tracks changes to the window width.
 
 ```javascript
 import React, { useCallback, useState } from "react";
 import { useWindowEvent } from "@culturehq/hooks";
 
-const getDimensions = () => ({
-  width: window.innerWidth,
-  height: window.innerHeight
-});
-
 const App = () => {
-  const [{ width, height }, setDimensions] = useState(getDimensions);
+  const [width, setWidth] = useState(window.innerWidth);
 
   useWindowEvent(
     "resize",
-    useCallback(() => setDimensions(getDimensions()), [setDimensions])
+    useCallback(() => setWidth(window.innerWidth), [setWidth])
   );
 
-  return (
-    <main>
-      <p>Window width: {width}</p>
-      <p>Window height: {height}</p>
-    </main>
-  );
+  return <p>{width}</p>;
 };
 ```
 
