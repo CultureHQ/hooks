@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import { act, fireEvent, render } from "@testing-library/react";
+import { act, render } from "@testing-library/react";
 
 import useWindowEvent from "../useWindowEvent";
 
