@@ -1,12 +1,39 @@
 {
-  "name": "hooks",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "name": "@culturehq/hooks",
+  "version": "0.1.0",
+  "description": "A set of reusable react hooks",
+  "main": "dist/main.js",
+  "module": "src/hooks.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "chq-scripts lint",
+    "prepublishOnly": "rm -rf dist && mkdir dist && yarn babel --out-file dist/main.js --ignore '**/__tests__' src",
+    "test": "chq-scripts test"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CultureHQ/hooks.git"
+  },
+  "author": "Kevin Deisz",
+  "license": "MIT",
+  "keywords": [
+    "react"
+  ],
+  "bugs": {
+    "url": "https://github.com/CultureHQ/hooks/issues"
+  },
+  "homepage": "https://github.com/CultureHQ/hooks#readme",
+  "peerDependencies": {
+    "react": ">= 16.8",
+    "react-dom": ">= 16.8"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@culturehq/scripts": "^2.1.0",
+    "@testing-library/react-hooks": "^1.0.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-test-renderer": "^16.8.6"
+  }
 }
