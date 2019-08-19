@@ -1,5 +1,6 @@
 # @culturehq/hooks
 
+[![Build Status](https://github.com/CultureHQ/hooks/workflows/Push/badge.svg)](https://github.com/CultureHQ/hooks/actions)
 [![Package Version](https://img.shields.io/npm/v/@culturehq/hooks.svg)](https://www.npmjs.com/package/@culturehq/hooks)
 
 A set of reusable hooks extracted from the [CultureHQ](https://www.culturehq.com) application.
