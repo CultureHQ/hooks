@@ -1,27 +1,29 @@
-import React, { useCallback, useState } from "react";
+import * as React from "react";
 import { act, render } from "@testing-library/react";
 
 import useWindowEvent from "../useWindowEvent";
 
 const App = () => {
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = React.useState(window.innerWidth);
 
   useWindowEvent(
     "resize",
-    useCallback(() => setWidth(window.innerWidth), [setWidth])
+    React.useCallback(() => setWidth(window.innerWidth), [setWidth])
   );
 
   return <p>{width}</p>;
 };
 
+const setInnerWidth = (value: number) => Object.defineProperty(window, "innerWidth", { value });
+
 test("useWindowEvent", () => {
-  window.innerWidth = 1000;
+  setInnerWidth(1000);
   const { queryByText } = render(<App />);
 
   expect(queryByText("1000")).toBeTruthy();
 
   act(() => {
-    window.innerWidth = 500;
+    setInnerWidth(500);
     window.dispatchEvent(new Event("resize"));
   });
 
