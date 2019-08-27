@@ -1,22 +1,21 @@
-import React, { useCallback, useState } from "react";
+import * as React from "react";
 import { act, fireEvent, render } from "@testing-library/react";
 
 import useDocumentEvent from "../useDocumentEvent";
 
 const App = () => {
-  const [paused, setPaused] = useState(false);
+  const [paused, setPaused] = React.useState(false);
 
-  useDocumentEvent(
-    "keydown",
-    useCallback(
-      event => {
-        if (event.key === " ") {
-          setPaused(value => !value);
-        }
-      },
-      [setPaused]
-    )
+  const onKeyDown = React.useCallback(
+    (event: KeyboardEvent) => {
+      if (event.key === " ") {
+        setPaused(value => !value);
+      }
+    },
+    [setPaused]
   );
+
+  useDocumentEvent("keydown", onKeyDown as ((event: Event) => void));
 
   return <p>{paused ? "Paused" : "Playing"}</p>;
 };
