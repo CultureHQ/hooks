@@ -5,9 +5,9 @@
   "main": "dist/hooks.js",
   "module": "src/hooks.js",
   "scripts": {
-    "build": "tsc",
+    "compile": "tsc --noEmit",
     "lint": "chq-scripts lint",
-    "prepublishOnly": "rm -rf dist && yarn build --declaration",
+    "prepublishOnly": "rm -rf dist && yarn tsc --declaration",
     "test": "chq-scripts test"
   },
   "repository": {

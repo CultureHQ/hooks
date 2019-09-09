@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 
-type Callback = (event: Event) => void;
-
-const useWindowEvent = (event: string, callback: Callback): ReturnType<typeof useEffect> => (
+const useWindowEvent = (event: string, callback: (event: Event) => void) => (
   useEffect(
     () => {
       window.addEventListener(event, callback);

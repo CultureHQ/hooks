@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 
-type Callback = (event: Event) => void;
-
-const useDocumentEvent = (event: string, callback: Callback): ReturnType<typeof useEffect> => (
+const useDocumentEvent = (event: string, callback: (event: Event) => void) => (
   useEffect(
     () => {
       document.addEventListener(event, callback);
