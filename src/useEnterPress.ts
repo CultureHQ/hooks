@@ -6,8 +6,8 @@ const useEnterPress = (onEnter: () => void) => {
   useDocumentEvent(
     "keydown",
     useCallback(
-      (event: KeyboardEvent) => {
-        if (event.key === "Enter") {
+      (event: Event) => {
+        if (event instanceof KeyboardEvent && event.key === "Enter") {
           onEnter();
         }
       },

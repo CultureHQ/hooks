@@ -3,13 +3,15 @@ import { fireEvent, render } from "@testing-library/react";
 
 import useClickOutside from "../useClickOutside";
 
-const Clickable = ({ onClickOutside }: { onClickOutside: () => void }) => {
+type ClickableProps = { onClickOutside: () => void };
+
+const Clickable = ({ onClickOutside }: ClickableProps) => {
   const containerRef = useClickOutside<HTMLButtonElement>(onClickOutside);
 
   return <button type="button" ref={containerRef}>Inside</button>;
 };
 
-const ClickContainer = ({ onClickOutside }) => (
+const ClickContainer = ({ onClickOutside }: ClickableProps) => (
   <div>
     <button type="button">Outside</button>
     <Clickable onClickOutside={onClickOutside} />
