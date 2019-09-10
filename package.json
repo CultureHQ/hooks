@@ -1,6 +1,6 @@
 {
   "name": "@culturehq/hooks",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "A set of reusable react hooks",
   "main": "dist/hooks.js",
   "module": "src/hooks.js",
