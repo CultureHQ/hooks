@@ -1,5 +1,6 @@
 .*
 /coverage/
+/src/
 /test/
-/yarn.lock
-/yarn-error.log
+/tsconfig*
+/yarn*

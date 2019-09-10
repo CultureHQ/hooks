@@ -2,7 +2,7 @@ import { useCallback, useRef } from "react";
 
 import useDocumentEvent from "./useDocumentEvent";
 
-const useClickOutside = <T extends HTMLElement = HTMLElement>(onClose: () => void) => {
+const useClickOutside = <T extends HTMLElement>(onClose: () => void) => {
   const containerRef = useRef<T>(null);
   const callback = useCallback(
     (event: Event) => {

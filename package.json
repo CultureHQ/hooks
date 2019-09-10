@@ -1,9 +1,9 @@
 {
   "name": "@culturehq/hooks",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A set of reusable react hooks",
   "main": "dist/hooks.js",
-  "module": "src/hooks.js",
+  "types": "dist/hooks.d.ts",
   "scripts": {
     "compile": "tsc --project tsconfig.test.json",
     "lint": "chq-scripts lint",
