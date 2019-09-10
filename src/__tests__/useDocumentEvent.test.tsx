@@ -1,5 +1,5 @@
 import * as React from "react";
-import { act, fireEvent, render } from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 
 import useDocumentEvent from "../useDocumentEvent";
 
@@ -22,10 +22,8 @@ const App = () => {
 
 test("useDocumentEvent", () => {
   const { queryByText } = render(<App />);
-
   expect(queryByText("Playing")).toBeTruthy();
 
-  act(() => void fireEvent.keyDown(document, { key: " " }));
-
+  fireEvent.keyDown(document, { key: " " });
   expect(queryByText("Paused")).toBeTruthy();
 });
