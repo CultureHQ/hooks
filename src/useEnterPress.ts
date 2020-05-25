@@ -2,7 +2,7 @@ import { useCallback } from "react";
 
 import useDocumentEvent from "./useDocumentEvent";
 
-const useEnterPress = (onEnter: () => void) => {
+const useEnterPress = (onEnter: () => void): void => {
   useDocumentEvent(
     "keydown",
     useCallback(

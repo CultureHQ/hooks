@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const useDocumentEvent = (event: string, callback: (event: Event) => void) => (
+const useDocumentEvent = (event: string, callback: (event: Event) => void): void => (
   useEffect(
     () => {
       document.addEventListener(event, callback);

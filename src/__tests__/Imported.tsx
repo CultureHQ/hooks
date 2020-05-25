@@ -1,5 +1,5 @@
 import * as React from "react";
 
-const Imported = () => <>Imported</>;
+const Imported: React.FC = () => <>Imported</>;
 
 export default Imported;
